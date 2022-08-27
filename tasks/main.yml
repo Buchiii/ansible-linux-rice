@@ -1,2 +1,5 @@
 ---
-# tasks file for ansible-linux-rice
+- name: ansible-linux-rice | install packages
+  community.general.pacman:
+    name: "{{ packages }}"
+    state: present
