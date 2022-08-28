@@ -2,3 +2,6 @@
 packages:
   - git
   - stow
+  - zsh
+
+aur_helper: paru

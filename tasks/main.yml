@@ -3,3 +3,32 @@
   community.general.pacman:
     name: "{{ packages }}"
     state: present
+
+
+- name: ansible-linux-rice | allow the user to run `sudo pacman` without a password
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers.d/11-install-aur_builder
+    line: 'buchiii ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+    create: yes
+    validate: 'visudo -cf %s'
+
+- name: ansible-linux-rice | install AUR-helper
+  kewlfft.aur.aur:
+    name: "{{ aur_helper }}"
+    use: makepkg
+  become: yes
+  become_user: buchiii
+
+- name: ansible-linux-rice | create ~/.github directory
+  ansible.builtin.file:
+    path: /home/buchiii/.github
+    owner: buchiii
+    group: buchiii
+    mode: '0755'
+    state: directory
+
+- name: ansible-linux-rice | clone dotfile repository (https://github.com/Buchiii/.dotfiles)
+  ansible.builtin.git:
+    repo: 'https://github.com/Buchiii/.dotfiles'
+    dest: /home/buchiii/.github/.dotfiles
+    clone: yes
