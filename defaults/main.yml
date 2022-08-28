@@ -1,7 +1,79 @@
 ---
 packages:
+  - alacritty-ligatures-git
+  - arc-gtk-theme
+  - bandwhich
+  - bat
+  - cava-git
+  - discord
+  - dust
+  - dunst
+  - exa
+  - fd
+  - feh
+  - figlet
+  - firefox
+  - flameshot
+  - fzf
   - git
+  - github-cli
+  - glances
+  - gping
+  - hack-font-ligature-nerd-font-git
+  - htop
+  - httpie
+  - jq
+  - lazygit
+  - mpv
+  - mtools
+  - ncdu
+  - ncmpcpp
+  - neofetch
+  - neovide
+  - neovim
+  - neovim-remote
+  - nerd-fonts-jetbrains-mono
+  - network-manager-applet
+  - networkmanager
+  - newsboat
+  - noto-fonts-emoji
+  - ntfs-3g
+  - pandoc-bin
+  - pasystray
+  - pavucontrol
+  - picom-ibhagwan-git
+  - procs
+  - pulsemixer
+  - python-pip
+  - qt5ct
+  - reflector
+  - ripgrep
+  - rofi
+  - scrcpy
+  - screenkey
+  - shellcheck
+  - shellharden
+  - signify
+  - skippy-xd-git
+  - slock
   - stow
+  - stremio
+  - tealdeer
+  - tree
+  - ttf-dejavu
+  - ttf-joypixels
+  - ttf-ms-fonts
+  - ttf-ubraille
+  - ttf-unifont
+  - ueberzug
+  - unzip
+  - vim
+  - wget
+  - xclip
+  - youtube-dl
+  - zathura
+  - zoxide
   - zsh
+  - zsh-completions-git
 
 aur_helper: paru

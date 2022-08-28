@@ -1,10 +1,4 @@
 ---
-- name: ansible-linux-rice | install packages
-  community.general.pacman:
-    name: "{{ packages }}"
-    state: present
-
-
 - name: ansible-linux-rice | allow the user to run `sudo pacman` without a password
   ansible.builtin.lineinfile:
     path: /etc/sudoers.d/11-install-aur_builder
@@ -19,16 +13,17 @@
   become: yes
   become_user: buchiii
 
-- name: ansible-linux-rice | create ~/.github directory
-  ansible.builtin.file:
-    path: /home/buchiii/.github
-    owner: buchiii
-    group: buchiii
-    mode: '0755'
-    state: directory
+- name: ansible-linux-rice | install packages
+  kewlfft.aur.aur:
+    name: "{{ packages }}"
+    use: paru
+  become: yes
+  become_user: buchiii
 
 - name: ansible-linux-rice | clone dotfile repository (https://github.com/Buchiii/.dotfiles)
   ansible.builtin.git:
     repo: 'https://github.com/Buchiii/.dotfiles'
-    dest: /home/buchiii/.github/.dotfiles
+    dest: /home/buchiii/.dotfiles
     clone: yes
+  become: yes
+  become_user: buchiii
