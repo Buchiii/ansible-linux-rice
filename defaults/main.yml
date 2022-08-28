@@ -70,7 +70,7 @@ packages:
   - vim
   - wget
   - xclip
-  - youtube-dl
+  - yt-dlp
   - zathura
   - zoxide
   - zsh
